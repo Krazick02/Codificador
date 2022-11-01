@@ -73,6 +73,9 @@ const myApp = createApp({
                         break
                     }
                 }
+                if (this.entrada.length == this.clave.length) {
+                    break
+                }
             }
 
             for (var x = 0; x < this.entrada.length; x++) {

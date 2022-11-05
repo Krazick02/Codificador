@@ -30,15 +30,25 @@
                     <textarea class="form-control" v-model="resultado" id="exampleFormControlTextarea1" rows="3" disabled placeholder="JZLVQWYDJ"></textarea>
                 </div>
                 <div class="row">
-                    <div class="col-6 p-2 text-center">
-                        <button class="btn btn-success" @click="ver()">
-                        Ver resultado
-                    </button>
+                    <div v-if="metodo==27" class="col-6 p-2 text-center">
+                        <button class="btn btn-success" @click="ver27()">
+                            Ver resultado 27
+                        </button>
+                    </div>
+                    <div v-if="metodo==8" class="col-6 p-2 text-center">
+                        <button class="btn btn-success" @click="ver8()">
+                            Ver resultado 8
+                        </button>
+                    </div>
+                    <div v-if="metodo==5" class="col-6 p-2 text-center">
+                        <button class="btn btn-success" @click="ver5()">
+                            Ver resultado 5
+                        </button>
                     </div>
                     <div class="col-6 p-2 text-center">
                         <button class="btn btn-danger" @click="clean()">
-                        Limpiar campos
-                    </button>
+                            Limpiar campos
+                        </button>
                     </div>
                 </div>
 

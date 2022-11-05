@@ -276,6 +276,12 @@ const myApp = createApp({
             //         'warning'
             //     )
             // }
+        },
+        info() {
+            Swal.fire(
+                'No puedes ingresar numeros o simbolos :c!',
+                'warning'
+            )
         }
 
 
@@ -284,3 +290,18 @@ const myApp = createApp({
         this.url = 'https://d5zj069sildq7.cloudfront.net/wp-content/uploads/2015/03/f.jpg'
     }
 }).mount('#app')
+
+// const myFooter = createApp({
+//     data() {
+//         return {}
+//     },
+//     methods: {
+//         info() {
+//             Swal.fire(
+//                 'No puedes ingresar numeros o simbolos :c!',
+//                 'warning'
+//             )
+//         }
+//     },
+//     mounted() {}
+// }).mount('#footer')

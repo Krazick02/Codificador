@@ -1,9 +1,5 @@
 body {
-    width: 101vw;
-    height: 100vh;
     background-color: #0099FF;
-    overflow-y: hidden;
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,17 +11,25 @@ body {
 }
 
 #app {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 60%;
+    height: 60%; */
 }
 
 #inside {
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
+}
+
+ion-icon {
+    color: RED;
+}
+
+ion-icon {
+    font-size: 30px;
 }
 
 @media (max-width: 600px) {

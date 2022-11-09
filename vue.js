@@ -123,19 +123,10 @@ const myApp = createApp({
                     }
                     contador++
                 }
-                console.log(contador)
+
                 this.resultado += this.abc[contador][0]
                 contador = 0
             }
-
-
-
-
-            for (var x = 0; x < this.encriptado.length; x++) {
-
-            }
-            console.log(this.ingresado)
-            console.log(this.ingresadoClave)
         },
         ver8() {
             this.resultado = ''
@@ -181,19 +172,10 @@ const myApp = createApp({
                     }
                     contador++
                 }
-                console.log(contador)
+
                 this.resultado += this.abc8[contador][0]
                 contador = 0
             }
-
-
-
-
-            for (var x = 0; x < this.encriptado.length; x++) {
-
-            }
-            console.log(this.ingresado)
-            console.log(this.ingresadoClave)
         },
         ver5() {
             this.resultado = ''
@@ -239,19 +221,172 @@ const myApp = createApp({
                     }
                     contador++
                 }
-                console.log(contador)
+
                 this.resultado += this.aei[contador][0]
                 contador = 0
             }
+        },
+        verD27() {
+            this.resultado = ''
+            this.ingresado = []
+            this.ingresadoClave = []
+            this.encriptado = []
+            this.cifrado = ''
+            var ent = this.clave.length
+            var text = this.clave
+            for (var x = this.clave.length; x < this.entrada.length; x++) {
+                for (var y = 0; y < ent; y++) {
+                    this.clave += text[y]
+                    if (this.entrada.length == this.clave.length) {
+                        break
+                    }
+                }
+                if (this.entrada.length == this.clave.length) {
+                    break
+                }
+            }
 
-
-
-
-            for (var x = 0; x < this.encriptado.length; x++) {
-
+            console.log(this.entrada)
+            for (var x = 0; x < this.entrada.length; x++) {
+                for (var y = 0; y < 27; y++) {
+                    if (this.abc[y][0] == this.entrada[x].toUpperCase()) {
+                        this.ingresado[this.ingresado.length] = (this.abc[y][1])
+                    }
+                }
             }
             console.log(this.ingresado)
+            for (var x = 0; x < this.clave.length; x++) {
+                for (var y = 0; y < 27; y++) {
+                    if (this.abc[y][0] == this.clave[x].toUpperCase()) {
+                        this.ingresadoClave[this.ingresadoClave.length] = (this.abc[y][1])
+                    }
+                }
+            }
             console.log(this.ingresadoClave)
+
+            for (var x = 0; x < this.ingresado.length; x++) {
+                for (var y = 0; y < this.abc.length; y++) {
+                    if ((((this.ingresado[x] - this.ingresadoClave[x]) % 27)) == this.abc[y][1]) {
+                        this.encriptado[this.encriptado.length] = this.abc[y][0]
+                        break
+                    }
+                    if ((((this.ingresado[x] - this.ingresadoClave[x]) % 27)) < 0) {
+                        if ((27 - (Math.abs(this.ingresado[x] - this.ingresadoClave[x]) % 27)) == this.abc[y][1]) {
+                            this.encriptado[this.encriptado.length] = this.abc[y][0]
+                            break
+                        }
+                    }
+                }
+                this.resultado += this.encriptado[this.encriptado.length - 1]
+            }
+        },
+        verD8() {
+            this.resultado = ''
+            this.ingresado = []
+            this.ingresadoClave = []
+            this.encriptado = []
+            this.cifrado = ''
+            var ent = this.clave.length
+            var text = this.clave
+            for (var x = this.clave.length; x < this.entrada.length; x++) {
+                for (var y = 0; y < ent; y++) {
+                    this.clave += text[y]
+                    if (this.entrada.length == this.clave.length) {
+                        break
+                    }
+                }
+                if (this.entrada.length == this.clave.length) {
+                    break
+                }
+            }
+
+            console.log(this.entrada)
+            for (var x = 0; x < this.entrada.length; x++) {
+                for (var y = 0; y < 8; y++) {
+                    if (this.abc8[y][0] == this.entrada[x].toUpperCase()) {
+                        this.ingresado[this.ingresado.length] = (this.abc8[y][1])
+                    }
+                }
+            }
+            console.log(this.ingresado)
+            for (var x = 0; x < this.clave.length; x++) {
+                for (var y = 0; y < 8; y++) {
+                    if (this.abc8[y][0] == this.clave[x].toUpperCase()) {
+                        this.ingresadoClave[this.ingresadoClave.length] = (this.abc8[y][1])
+                    }
+                }
+            }
+            console.log(this.ingresadoClave)
+
+            for (var x = 0; x < this.ingresado.length; x++) {
+                for (var y = 0; y < this.abc8.length; y++) {
+                    if ((((this.ingresado[x] - this.ingresadoClave[x]) % 8)) == this.abc8[y][1]) {
+                        this.encriptado[this.encriptado.length] = this.abc8[y][0]
+                        break
+                    }
+                    if ((((this.ingresado[x] - this.ingresadoClave[x]) % 8)) < 0) {
+                        if ((8 - (Math.abs(this.ingresado[x] - this.ingresadoClave[x]) % 8)) == this.abc8[y][1]) {
+                            this.encriptado[this.encriptado.length] = this.abc8[y][0]
+                            break
+                        }
+                    }
+                }
+                this.resultado += this.encriptado[this.encriptado.length - 1]
+            }
+        },
+        verD5() {
+            this.resultado = ''
+            this.ingresado = []
+            this.ingresadoClave = []
+            this.encriptado = []
+            this.cifrado = ''
+            var ent = this.clave.length
+            var text = this.clave
+            for (var x = this.clave.length; x < this.entrada.length; x++) {
+                for (var y = 0; y < ent; y++) {
+                    this.clave += text[y]
+                    if (this.entrada.length == this.clave.length) {
+                        break
+                    }
+                }
+                if (this.entrada.length == this.clave.length) {
+                    break
+                }
+            }
+
+            console.log(this.entrada)
+            for (var x = 0; x < this.entrada.length; x++) {
+                for (var y = 0; y < 5; y++) {
+                    if (this.aei[y][0] == this.entrada[x].toUpperCase()) {
+                        this.ingresado[this.ingresado.length] = (this.aei[y][1])
+                    }
+                }
+            }
+            console.log(this.ingresado)
+            for (var x = 0; x < this.clave.length; x++) {
+                for (var y = 0; y < 5; y++) {
+                    if (this.aei[y][0] == this.clave[x].toUpperCase()) {
+                        this.ingresadoClave[this.ingresadoClave.length] = (this.aei[y][1])
+                    }
+                }
+            }
+            console.log(this.ingresadoClave)
+
+            for (var x = 0; x < this.ingresado.length; x++) {
+                for (var y = 0; y < this.aei.length; y++) {
+                    if ((((this.ingresado[x] - this.ingresadoClave[x]) % 5)) == this.aei[y][1]) {
+                        this.encriptado[this.encriptado.length] = this.aei[y][0]
+                        break
+                    }
+                    if ((((this.ingresado[x] - this.ingresadoClave[x]) % 5)) < 0) {
+                        if ((5 - (Math.abs(this.ingresado[x] - this.ingresadoClave[x]) % 5)) == this.aei[y][1]) {
+                            this.encriptado[this.encriptado.length] = this.aei[y][0]
+                            break
+                        }
+                    }
+                }
+                this.resultado += this.encriptado[this.encriptado.length - 1]
+            }
         },
         let27() {
             this.metodo = '27'
@@ -290,18 +425,3 @@ const myApp = createApp({
         this.url = 'https://d5zj069sildq7.cloudfront.net/wp-content/uploads/2015/03/f.jpg'
     }
 }).mount('#app')
-
-// const myFooter = createApp({
-//     data() {
-//         return {}
-//     },
-//     methods: {
-//         info() {
-//             Swal.fire(
-//                 'No puedes ingresar numeros o simbolos :c!',
-//                 'warning'
-//             )
-//         }
-//     },
-//     mounted() {}
-// }).mount('#footer')

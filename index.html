@@ -33,7 +33,7 @@
             </div>
             <div class="p-1">
                 <label for="mensaje" class="form-label p-1 tag"><p class="fs-3 fst-italic">Mensaje encriptado</p></label>
-                <input class="form-control" v-model="resultado" id="mensaje" disabled placeholder="JZLVQWYDJ">
+                <input class="form-control" v-model="resultado" id="mensaje" disabled placeholder="JZLVPWXDK">
             </div>
             <div class="row">
                 <div v-if="metodo==27" class="col-6 p-2 text-center">
@@ -48,6 +48,64 @@
                 </div>
                 <div v-if="metodo==5" class="col-6 p-2 text-center">
                     <button class="btn btn-success" @click="ver5()">
+                        Ver resultado 
+                    </button>
+                </div>
+                <div class="col-6 p-2 text-center">
+                    <button class="btn btn-danger" @click="clean()">
+                        Limpiar campos
+                    </button>
+                </div>
+            </div>
+            <div class="row m-1">
+                <div class="col-sm-6 p-lg-5">
+                    <button class="btn btn-warning" v-if="funcion=='encriptar'" @click="funcion='desencriptar'">Desea desencriptar?</button>
+                    <button class="btn btn-warning" v-if="funcion=='desencriptar'" @click="funcion='encriptar'">Desea encriptar?</button>
+                </div>
+                <div class="col-sm-6 p-2">
+                    <div class="row">
+                        <div class="col-sm-4 p-lg-5"><button class="btn btn-warning" @click="let27()">L.27</button></div>
+                        <div class="col-sm-4 p-lg-5"><button class="btn btn-warning" @click="let8()">L.  8 </button></div>
+                        <div class="col-sm-4 p-lg-5"><button class="btn btn-warning" @click="let5()">L.  5 </button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="inside" v-if="funcion=='desencriptar'" class="col justify-content-center text-start bg-light">
+            <div class="p-1">
+                <span>
+                    <p class="fs-3 fst-italic">
+                        Cifrado a {{ metodo }} letras
+                    </p>
+                </span>
+            </div>
+            <div class="p-1">
+                <label for="mensaje" class="form-label p-1 tag"><p class="fs-3 fst-italic">Mensaje a desencriptar</p></label>
+                <input type="text" class="form-control" v-model="entrada" id="mensaje" @keyup="validar()" placeholder="JZLVPWXDK">
+                <label v-if="errorEntrada" class="form-label p-3 tag text-danger">Solo letras</label>
+            </div>
+            <div class="p-1">
+                <label for="clave" class="form-label p-1s tag"><p class="fs-3 fst-italic">Clave de encriptacion</p></label>
+                <input type="text" class="form-control" v-model="clave" id="mensaje" @keyup="validar()" placeholder="CLAVE">
+                <label v-if="errorClave" class="form-label p-3 tag text-danger">Solo letras</label>
+            </div>
+            <div class="p-1">
+                <label for="mensaje" class="form-label p-1 tag"><p class="fs-3 fst-italic">Mensaje desencriptado</p></label>
+                <input class="form-control" v-model="resultado" id="mensaje" disabled placeholder="HOLAMUNDO">
+            </div>
+            <div class="row">
+                <div v-if="metodo==27" class="col-6 p-2 text-center">
+                    <button class="btn btn-success" @click="verD27()">
+                        Ver resultado 
+                    </button>
+                </div>
+                <div v-if="metodo==8" class="col-6 p-2 text-center">
+                    <button class="btn btn-success" @click="verD8()">
+                        Ver resultado 
+                    </button>
+                </div>
+                <div v-if="metodo==5" class="col-6 p-2 text-center">
+                    <button class="btn btn-success" @click="verD5()">
                         Ver resultado 
                     </button>
                 </div>

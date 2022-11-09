@@ -4,7 +4,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('https://d5zj069sildq7.cloudfront.net/wp-content/uploads/2015/03/f.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -22,6 +21,8 @@ body {
 #inside {
     /* width: 100%;
     height: 100%; */
+    background-image: url('https://d5zj069sildq7.cloudfront.net/wp-content/uploads/2015/03/f.jpg');
+    color: white;
 }
 
 ion-icon {

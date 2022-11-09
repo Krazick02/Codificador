@@ -24,12 +24,14 @@
             <div class="p-1">
                 <label for="mensaje" class="form-label p-1 tag"><p class="fs-3 fst-italic">Mensaje a encriptar</p></label>
                 <input type="text" class="form-control" v-model="entrada" id="mensaje" @keyup="validar()" placeholder="HOLAMUNDO">
-                <label v-if="errorEntrada" class="form-label p-3 tag text-danger">Solo letras</label>
+                <label v-if="errorEntrada" class="form-label p-3 tag text-danger">Solo las letras del abecedario seleccionado</label>
+                <label v-if="errorEntrada" class="form-label p-3 tag text-danger">{{ abecedario }}</label>
             </div>
             <div class="p-1">
                 <label for="clave" class="form-label p-1s tag"><p class="fs-3 fst-italic">Clave de encriptacion</p></label>
                 <input type="text" class="form-control" v-model="clave" id="mensaje" @keyup="validar()" placeholder="CLAVE">
-                <label v-if="errorClave" class="form-label p-3 tag text-danger">Solo letras</label>
+                <label v-if="errorClave" class="form-label p-3 tag text-danger">Solo las letras del abecedario seleccionado</label>
+                <label v-if="errorClave" class="form-label p-3 tag text-danger">{{ abecedario }}</label>
             </div>
             <div class="p-1">
                 <label for="mensaje" class="form-label p-1 tag"><p class="fs-3 fst-italic">Mensaje encriptado</p></label>
@@ -37,17 +39,17 @@
             </div>
             <div class="row">
                 <div v-if="metodo==27" class="col-6 p-2 text-center">
-                    <button class="btn btn-success" @click="ver27()">
+                    <button class="btn btn-success" v-bind:disabled="visualizar" @click="ver27()">
                         Ver resultado 
                     </button>
                 </div>
                 <div v-if="metodo==8" class="col-6 p-2 text-center">
-                    <button class="btn btn-success" @click="ver8()">
+                    <button class="btn btn-success" v-bind:disabled="visualizar" @click="ver8()">
                         Ver resultado 
                     </button>
                 </div>
                 <div v-if="metodo==5" class="col-6 p-2 text-center">
-                    <button class="btn btn-success" @click="ver5()">
+                    <button class="btn btn-success" v-bind:disabled="visualizar" @click="ver5()">
                         Ver resultado 
                     </button>
                 </div>
@@ -82,12 +84,14 @@
             <div class="p-1">
                 <label for="mensaje" class="form-label p-1 tag"><p class="fs-3 fst-italic">Mensaje a desencriptar</p></label>
                 <input type="text" class="form-control" v-model="entrada" id="mensaje" @keyup="validar()" placeholder="JZLVPWXDK">
-                <label v-if="errorEntrada" class="form-label p-3 tag text-danger">Solo letras</label>
+                <label v-if="errorEntrada" class="form-label p-3 tag text-danger">Solo las letras del abecedario seleccionado</label>
+                <label v-if="errorEntrada" class="form-label p-3 tag text-danger">{{ abecedario }}</label>
             </div>
             <div class="p-1">
                 <label for="clave" class="form-label p-1s tag"><p class="fs-3 fst-italic">Clave de encriptacion</p></label>
                 <input type="text" class="form-control" v-model="clave" id="mensaje" @keyup="validar()" placeholder="CLAVE">
-                <label v-if="errorClave" class="form-label p-3 tag text-danger">Solo letras</label>
+                <label v-if="errorClave" class="form-label p-3 tag text-danger">Solo las letras del abecedario seleccionado</label>
+                <label v-if="errorClave" class="form-label p-3 tag text-danger">{{ abecedario }}</label>
             </div>
             <div class="p-1">
                 <label for="mensaje" class="form-label p-1 tag"><p class="fs-3 fst-italic">Mensaje desencriptado</p></label>
@@ -95,17 +99,17 @@
             </div>
             <div class="row">
                 <div v-if="metodo==27" class="col-6 p-2 text-center">
-                    <button class="btn btn-success" @click="verD27()">
+                    <button class="btn btn-success" v-bind:disabled="visualizar" @click="verD27()">
                         Ver resultado 
                     </button>
                 </div>
                 <div v-if="metodo==8" class="col-6 p-2 text-center">
-                    <button class="btn btn-success" @click="verD8()">
+                    <button class="btn btn-success" v-bind:disabled="visualizar" @click="verD8()">
                         Ver resultado 
                     </button>
                 </div>
                 <div v-if="metodo==5" class="col-6 p-2 text-center">
-                    <button class="btn btn-success" @click="verD5()">
+                    <button class="btn btn-success" v-bind:disabled="visualizar" @click="verD5()">
                         Ver resultado 
                     </button>
                 </div>

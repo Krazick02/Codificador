@@ -60,12 +60,14 @@ const myApp = createApp({
             encriptado: [],
             errorEntrada: false,
             errorClave: false,
+            visualizar: false,
             cifrado: '',
             entrada: '',
             url: '',
             regex: /^[a-zA-ZñÑ]*$/,
             funcion: 'encriptar',
-            metodo: '27'
+            metodo: '27',
+            abecedario: 'A-B-C-D-E-F-G-H-I-J-K-L-M-N-Ñ-O-P-Q-R-S-T-U-V-W-X-Y-Z'
 
         }
     },
@@ -391,16 +393,21 @@ const myApp = createApp({
         let27() {
             this.metodo = '27'
             this.regex = /^[a-zA-ZñÑ]*$/
+            this.abecedario = 'A-B-C-D-E-F-G-H-I-J-K-L-M-N-Ñ-O-P-Q-R-S-T-U-V-W-X-Y-Z'
             this.clean()
         },
         let8() {
             this.metodo = '8'
             this.regex = /^[abcdwxyzABCDWXYZ]*$/
+            this.abecedario = 'A-B-C-D-W-X-Y-Z'
+
             this.clean()
         },
         let5() {
             this.metodo = '5'
             this.regex = /^[aeiouAEIOU]*$/
+            this.abecedario = 'A-E-I-O-U'
+
             this.clean()
         },
         validar() {
@@ -426,6 +433,23 @@ const myApp = createApp({
                 this.funcion = 'encriptar'
             }
 
+        },
+        validar() {
+            if (!this.regex.test(this.entrada)) {
+                this.errorEntrada = true
+            } else {
+                this.errorEntrada = false
+            }
+            if (!this.regex.test(this.clave)) {
+                this.errorClave = true
+            } else {
+                this.errorClave = false
+            }
+            if (this.errorClave || this.errorEntrada) {
+                this.visualizar = true
+            } else {
+                this.visualizar = false
+            }
         }
     },
     mounted() {

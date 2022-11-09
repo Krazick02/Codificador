@@ -417,9 +417,16 @@ const myApp = createApp({
                 'No puedes ingresar numeros o simbolos :c!',
                 'warning'
             )
+        },
+        cambio() {
+            this.clean()
+            if (this.funcion == 'encriptar') {
+                this.funcion = 'desencriptar'
+            } else {
+                this.funcion = 'encriptar'
+            }
+
         }
-
-
     },
     mounted() {
         this.url = 'https://d5zj069sildq7.cloudfront.net/wp-content/uploads/2015/03/f.jpg'
